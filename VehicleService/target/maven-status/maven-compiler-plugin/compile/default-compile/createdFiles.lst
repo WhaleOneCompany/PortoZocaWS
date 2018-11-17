@@ -1,0 +1,4 @@
+br\com\whale1\vehicles\VehiclesStarter.class
+br\com\whale1\vehicles\resource\VehicleResource.class
+br\com\whale1\vehicles\repository\Vehicles.class
+br\com\whale1\vehicles\model\Vehicle.class
