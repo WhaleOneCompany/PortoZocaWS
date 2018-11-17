@@ -5,20 +5,35 @@
  */
 package com.whaleone.portozocaws.product;
 
+import com.whaleone.portozocaws.core.DAOException;
+import com.whaleone.portozocaws.core.Resource;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Perin
  */
-public class ProductResource {
+@Component
+public class ProductResource implements Resource<Product> {
 
     @Autowired
     private ProductRepository dao;
 
-    public List<Product> getAll() {
+    @Override
+    public final List<Product> getAll() {
         return dao.findAll();
+    }
+
+    @Override
+    public final Long save(Product bean) {
+        return dao.save(bean).getId();
+    }
+
+    @Override
+    public Product getOne(Long id) throws DAOException {
+        return dao.findById(id).orElse(new Product());
     }
 
 }

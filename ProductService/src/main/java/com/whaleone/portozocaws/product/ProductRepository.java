@@ -9,12 +9,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Perin
  */
-public interface ProductRepository extends JpaRepository<Product, ProductPk>, JpaSpecificationExecutor<Product> {
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM Product WHERE name = :name LIMIT 1")
     public Product findByName(@Param("name") String name);
