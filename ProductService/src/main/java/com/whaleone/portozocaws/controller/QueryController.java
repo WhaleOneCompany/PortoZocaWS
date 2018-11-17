@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.whaleone.portozocaws;
+package com.whaleone.portozocaws.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
